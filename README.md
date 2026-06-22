@@ -247,6 +247,142 @@ DBMS is a tool used to manage the database.
 - Transactions  
 
 ---
+#Question with solution
+# 🔹 Basic SQL & DBMS Interview Q&A
+
+---
+
+## ✅ 1. What is SQL?
+
+SQL (Structured Query Language) is a programming language used to interact with databases.  
+It is used to **store, retrieve, update, and delete data**.
+
+---
+
+## ✅ 2. What is a Database?
+
+A **Database** is an organized collection of data stored in a structured format.
+
+👉 Example:
+- Student records
+- Bank accounts
+- Employee details
+
+---
+
+## ✅ 3. What is DBMS?
+
+DBMS (Database Management System) is software used to **create, manage, and manipulate databases**.
+
+👉 Examples:
+- MySQL  
+- PostgreSQL  
+- Oracle  
+
+👉 It helps in:
+- Data storage  
+- Data retrieval  
+- Data security  
+
+---
+
+## ✅ 4. What is RDBMS?
+
+RDBMS (Relational Database Management System) is a type of DBMS where data is stored in **tables (rows and columns)** and relationships are maintained between tables.
+
+👉 Examples:
+- MySQL  
+- PostgreSQL  
+
+---
+
+## ✅ 5. Difference between DBMS and RDBMS?
+
+| Feature | DBMS | RDBMS |
+|--------|------|------|
+| Structure | Stores data as files | Stores data in tables |
+| Relationship | No relation support | Supports relationships |
+| Normalization | Not applied | Applied |
+| Examples | File system | MySQL, PostgreSQL |
+
+---
+
+## ✅ 6. What is a Table?
+
+A **Table** is a structure in a database that stores data in **rows and columns**.
+
+👉 Example:
+A student table with columns: `id`, `name`, `age`
+
+---
+
+## ✅ 7. What is a Row and Column?
+
+- **Row** → A single record in a table  
+- **Column** → A field or attribute of data  
+
+👉 Example:
+
+| id | name | age |
+|----|------|-----|
+| 1  | John | 20  |
+
+- Row → (1, John, 20)  
+- Column → id / name / age  
+
+---
+
+## ✅ 8. What is a Primary Key?
+
+A **Primary Key** uniquely identifies each record in a table.  
+It cannot be **NULL or duplicate**.
+
+```sql
+CREATE TABLE student (
+    id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+## ✅ 9. What is a Foreign Key?
+
+A **Foreign Key** is a column (or set of columns) used to create a relationship between two tables.  
+It refers to the **Primary Key of another table**.
+
+👉 Purpose:
+- Maintains **data integrity**
+- Links related data between tables
+
+### ✅ Example:
+
+```sql
+CREATE TABLE student (
+    id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+CREATE TABLE orders (
+    order_id INT,
+    student_id INT,
+    FOREIGN KEY (student_id) REFERENCES student(id)
+);
+## ✅ 10. What is a Unique Key?
+
+A **Unique Key** is a constraint used to ensure that all values in a column (or combination of columns) are **unique (no duplicates allowed)**.
+
+👉 Key Points:
+- Prevents duplicate values  
+- Allows **one NULL value** (in most databases)  
+- A table can have **multiple UNIQUE keys**  
+
+---
+
+### ✅ Example:
+
+```sql
+CREATE TABLE student (
+    id INT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE
+);
+``
 
 # 🔥 Author
 
