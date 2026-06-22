@@ -1,178 +1,86 @@
 # SQL_Master
+# 📘 DBMS & SQL – Interview Preparation Notes
 
-✅ 1. What is a Database (DB)?
-A Database is an organized collection of data stored in a structured way so it can be easily accessed, managed, and updated.
-🔹 Example:
+This repository contains my structured notes for **Database and SQL concepts** for interview preparation.
 
-Student records in a college (name, roll number, marks)
-Bank account details
-Employee data in a company
+---
 
-👉 In simple words:
+# 🔹 1. What is a Database (DB)?
 
-A database is where data is stored.
+A **Database** is an organized collection of data stored in a structured way so it can be easily accessed, managed, and updated.
 
+### ✅ Examples:
+- Student records
+- Banking systems
+- Employee management systems
 
-✅ 2. What is DBMS (Database Management System)?
-A DBMS is a software/tool used to create, manage, and interact with databases.
-🔹 Examples of DBMS:
+👉 **In simple words:**
+A database is a place where data is stored.
 
-MySQL
-PostgreSQL
-Oracle
-SQL Server
+---
 
-🔹 What DBMS does:
+# 🔹 2. What is DBMS (Database Management System)?
 
-Stores data
-Retrieves data
-Updates data
-Deletes data
-Ensures security and consistency
+A **DBMS** is software used to create, manage, and manipulate databases.
 
-👉 In simple words:
+### ✅ Examples:
+- MySQL  
+- PostgreSQL  
+- Oracle  
+- SQL Server  
 
-DBMS is the software that helps you work with the database.
+### ✅ Functions:
+- Store data  
+- Retrieve data  
+- Update and delete data  
+- Maintain security  
+- Ensure consistency  
 
+👉 **In simple words:**
+DBMS is a tool used to manage the database.
 
-✅ 3. Types of Databases
-Databases are classified based on how data is stored and managed.
+---
 
-🔹 1. Relational Database (RDBMS)
+# 🔹 3. Types of Databases
 
-Data stored in tables (rows & columns)
-Uses SQL (Structured Query Language)
+## ✅ 1. Relational Database (RDBMS)
+- Data stored in tables (rows & columns)
+- Uses SQL
 
-✅ Examples:
+**Examples:** MySQL, PostgreSQL, Oracle  
 
-MySQL
-PostgreSQL
-Oracle
+👉 Most commonly used database ✅
 
-✅ Use Case:
+---
 
-Banking systems
-E-commerce websites
+## ✅ 2. NoSQL Database
+- Stores unstructured or semi-structured data
+- Flexible schema
 
-👉 Most commonly used type ✅
+### Types:
+- Document → MongoDB  
+- Key-Value → Redis  
+- Column → Cassandra  
+- Graph → Neo4j  
 
-🔹 2. NoSQL Database
+---
 
-Stores unstructured or semi-structured data
-No fixed table structure
+## ✅ 3. Hierarchical Database
+- Tree-like structure (Parent → Child)
 
-✅ Types inside NoSQL:
+👉 Used in older systems
 
-Document-based (MongoDB)
-Key-Value (Redis)
-Column-based (Cassandra)
-Graph (Neo4j)
+---
 
-✅ Use Case:
+## ✅ 4. Network Database
+- Graph structure (many-to-many relationships)
 
-Big data applications
-Real-time apps (chat, social media)
+---
 
+## ✅ 5. Object-Oriented Database
+- Stores data as objects (like Java classes)
 
-🔹 3. Object-Oriented Database
-
-Stores data as objects (like Java classes)
-
-✅ Example:
-
-ObjectDB
-
-✅ Use Case:
-
-Complex applications using OOP
-
-
-🔹 4. Hierarchical Database
-
-Data stored in a tree-like structure (parent-child)
-
-✅ Example:
-
-IBM IMS
-
-✅ Use Case:
-
-Old systems (legacy systems)
-
-
-🔹 5. Network Database
-
-Data stored as a graph (many-to-many relationships)
-
-✅ Use Case:
-
-Telecom systems (earlier systems)
-
-✅ Final Simple Summary
-
-Database → Place where data is stored
-DBMS → Tool to manage that data
-RDBMS → Most commonly used database (tables + SQL)
-NoSQL → Flexible data storage for modern apps
-
-✅ Types of SQL Commands
-SQL commands are mainly divided into 5 categories:
-
-🔹 1. DDL (Data Definition Language)
-👉 Used to define or modify database structure
-✅ Commands:
-
-CREATE → Create database/table
-ALTER → Modify table structure
-DROP → Delete table/database
-TRUNCATE → Remove all data from table
-
-✅ Example:
-SQLCREATE TABLE student (    id INT,    name VARCHAR(50));Show more lines
-
-🔹 2. DML (Data Manipulation Language)
-👉 Used to insert, update, delete data
-✅ Commands:
-
-INSERT → Add data
-UPDATE → Modify existing data
-DELETE → Remove data
-
-✅ Example:
-SQLINSERT INTO student VALUES (1, 'John');UPDATE student SET name = 'Sam' WHERE id = 1;DELETE FROM student WHERE id = 1;``Show more lines
-
-🔹 3. DQL (Data Query Language)
-👉 Used to retrieve data from database
-✅ Command:
-
-SELECT
-
-✅ Example:
-SQLSELECT * FROM student;Show more lines
-👉 Most frequently used SQL command ✅
-
-🔹 4. DCL (Data Control Language)
-👉 Used to control access/permissions
-✅ Commands:
-
-GRANT → Give permission
-REVOKE → Remove permission
-
-✅ Example:
-SQLGRANT SELECT ON student TO user1;REVOKE SELECT ON student FROM user1;Show more lines
-
-🔹 5. TCL (Transaction Control Language)
-👉 Used to manage transactions
-✅ Commands:
-
-COMMIT → Save changes
-ROLLBACK → Undo changes
-SAVEPOINT → Set a point in transaction
-
-✅ Example:
-SQLBEGIN;
-UPDATE student SET name = 'Raj' WHERE id = 1;ROLLBACK;
-Show more lines
+---
 
 ✅ Easy Way to Remember
 👉 DDL → Design (structure)
@@ -182,4 +90,165 @@ Show more lines
 👉 TCL → Transaction safety
 ✅ Quick Summary Table
 <img width="467" height="254" alt="image" src="https://github.com/user-attachments/assets/fa7ad956-c7d5-4e4e-8481-de6d672badaa" />
+# 🔥 Top 100 SQL Interview Questions
 
+## 🔹 Basic SQL Questions
+
+1. What is SQL?
+2. What is a database?
+3. What is DBMS?
+4. What is RDBMS?
+5. Difference between DBMS and RDBMS?
+6. What is a table?
+7. What is a row and column?
+8. What is a primary key?
+9. What is a foreign key?
+10. What is a unique key?
+11. What is a composite key?
+12. What is a candidate key?
+13. What is normalization?
+14. Types of normalization (1NF, 2NF, 3NF)?
+15. What is denormalization?
+16. What is NULL?
+17. Difference between NULL and NOT NULL?
+18. What is a constraint?
+19. Types of constraints?
+20. What is default constraint?
+
+---
+
+## 🔹 DDL & DML Questions
+
+21. Difference between DELETE, TRUNCATE, and DROP?
+22. What is ALTER command?
+23. What is CREATE command?
+24. What is INSERT command?
+25. What is UPDATE command?
+26. What is DELETE command?
+27. Can we rollback DELETE?
+28. Can we rollback TRUNCATE?
+29. What is AUTO_INCREMENT?
+30. What is schema?
+
+---
+
+## 🔹 SELECT Queries
+
+31. What is SELECT statement?
+32. Difference between SELECT * and SELECT columns?
+33. What is WHERE clause?
+34. What is ORDER BY?
+35. What is GROUP BY?
+36. What is HAVING?
+37. Difference between WHERE and HAVING?
+38. What is DISTINCT?
+39. What is LIMIT?
+40. What is alias in SQL?
+
+---
+
+## 🔹 Joins (Very Important)
+
+41. What are joins?
+42. Types of joins?
+43. What is INNER JOIN?
+44. What is LEFT JOIN?
+45. What is RIGHT JOIN?
+46. What is FULL JOIN?
+47. What is CROSS JOIN?
+48. Difference between INNER and LEFT JOIN?
+49. What is SELF JOIN?
+50. Real-time example of joins?
+
+---
+
+## 🔹 Aggregate Functions
+
+51. What are aggregate functions?
+52. COUNT vs SUM?
+53. AVG function usage?
+54. MAX and MIN?
+55. Can aggregate functions use WHERE?
+56. What is GROUP BY with aggregate?
+57. What is HAVING with aggregate?
+58. What happens if GROUP BY is not used?
+59. Difference between COUNT(*) and COUNT(column)?
+60. Aggregate functions with NULL values?
+
+---
+
+## 🔹 Subqueries
+
+61. What is a subquery?
+62. Types of subqueries?
+63. What is correlated subquery?
+64. Subquery vs JOIN?
+65. What is EXISTS?
+66. What is IN operator?
+67. Difference between IN and EXISTS?
+68. Nested subqueries?
+69. Can subquery return multiple rows?
+70. Performance of subqueries?
+
+---
+
+## 🔹 Indexing
+
+71. What is an index?
+72. Types of indexes?
+73. Clustered vs Non-clustered index?
+74. How index improves performance?
+75. Disadvantages of index?
+76. When not to use index?
+77. Composite index?
+78. Unique index?
+79. Index vs primary key?
+80. How to create index?
+
+---
+
+## 🔹 Transactions & TCL
+
+81. What is a transaction?
+82. Properties of transaction (ACID)?
+83. What is COMMIT?
+84. What is ROLLBACK?
+85. What is SAVEPOINT?
+86. What is isolation level?
+87. Dirty read?
+88. Non-repeatable read?
+89. Phantom read?
+90. How to handle transactions?
+
+---
+
+## 🔹 Advanced SQL
+
+91. What is view?
+92. Types of views?
+93. What is materialized view?
+94. What is stored procedure?
+95. What is function in SQL?
+96. Difference between procedure and function?
+97. What is trigger?
+98. Use case of triggers?
+99. What is CTE (Common Table Expression)?
+100. What is window function?
+
+---
+
+# 🚀 Interview Tip
+
+✅ Focus heavily on:
+- Joins  
+- Group By & Having  
+- Subqueries  
+- Indexing  
+- Transactions  
+
+---
+
+# 🔥 Author
+
+**Sathiyanarayanan**  
+Java Backend Developer Aspirant 🚀
