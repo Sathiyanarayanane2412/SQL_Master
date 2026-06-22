@@ -342,6 +342,7 @@ CREATE TABLE student (
     id INT PRIMARY KEY,
     name VARCHAR(50)
 );
+```
 ## ✅ 9. What is a Foreign Key?
 
 A **Foreign Key** is a column (or set of columns) used to create a relationship between two tables.  
@@ -364,6 +365,7 @@ CREATE TABLE orders (
     student_id INT,
     FOREIGN KEY (student_id) REFERENCES student(id)
 );
+```
 ## ✅ 10. What is a Unique Key?
 
 A **Unique Key** is a constraint used to ensure that all values in a column (or combination of columns) are **unique (no duplicates allowed)**.
@@ -382,7 +384,7 @@ CREATE TABLE student (
     id INT PRIMARY KEY,
     email VARCHAR(100) UNIQUE
 );
-``
+```
 
 # 🔥 Author
 
