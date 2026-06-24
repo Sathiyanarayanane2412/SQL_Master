@@ -241,7 +241,94 @@ CREATE TABLE student (
     email VARCHAR(100) UNIQUE
 );
 ```
+## ✅ 9. What is GROUP BY?
 
+`GROUP BY` is used to **group rows that have the same values** in one or more columns and perform **aggregate operations** on each group.
+
+---
+
+### 👉 Key Points:
+
+- Groups rows based on column values  
+- Used with aggregate functions:
+  - `COUNT()`
+  - `SUM()`
+  - `AVG()`
+  - `MIN()`
+  - `MAX()`  
+- Every column in `SELECT` must be:
+  - Included in `GROUP BY`
+  - OR used inside an aggregate function  
+- Often used with `HAVING` to filter grouped results  
+- Works after `WHERE` in query execution  
+
+---
+
+### ✅ Syntax:
+
+```sql
+SELECT column_name, AGG_FUNCTION(column_name)
+FROM table_name
+GROUP BY column_name;
+```
+### ✅ Example Table:
+
+| id | name | dept | salary |
+|----|------|------|--------|
+| 1  | A    | IT   | 50000  |
+| 2  | B    | HR   | 40000  |
+| 3  | C    | IT   | 60000  |
+| 4  | D    | HR   | 45000  |
+
+##1. Count Employees per Department
+```
+
+SELECT dept, COUNT(*) AS total_employees
+FROM employee
+GROUP BY dept;
+```
+##2. Total Salary per Department
+```
+
+SELECT dept, SUM(salary) AS total_salary
+FROM employee
+GROUP BY dept
+```
+##3. Average Salary per Department
+```
+
+SELECT dept, AVG(salary) AS avg_salary
+FROM employee
+GROUP BY dept;
+```
+##4.Maximum Salary per Department
+```
+
+SELECT dept, MAX(salary) AS max_salary
+FROM employee
+GROUP BY dept;
+```
+
+## ✅ 🔹 5. GROUP BY with Multiple Columns
+
+```sql
+SELECT dept, salary, COUNT(*)
+FROM employee
+GROUP BY dept, salary;
+```
+---
+
+# ⚖️ WHERE vs HAVING
+```md
+# ⚖️ WHERE vs HAVING
+
+| Feature | WHERE | HAVING |
+|--------|-------|--------|
+| Filters | Rows | Groups |
+| Used before GROUP BY | ✅ | ❌ |
+| Used after GROUP BY | ❌ | ✅ |
+| Supports aggregate functions | ❌ | ✅ |
+```md
 # 🔥 Author
 
 **Sathiyanarayanan**  
