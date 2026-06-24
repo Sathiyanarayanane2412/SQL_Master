@@ -350,80 +350,208 @@ SELECT name, dept, SUM(salary)
 FROM employee
 GROUP BY dept;
 ```
-# SQL Query Fundamentals
 
-## 1. What is WHERE?
+1\. What is `WHERE`?
+====================
 
-WHERE filters rows before any grouping or aggregation happens.
+`WHERE` filters rows **before** any grouping or aggregation happens.
 
-**Example Table: Employees**
+### Example Table: Employees
 
-| id | name  | department | salary |
-|-----|--------|------------|--------|
-| 1   | Ravi   | IT         | 50000  |
-| 2   | Priya  | HR         | 40000  |
-| 3   | Arun   | IT         | 60000  |
-| 4   | Neha   | HR         | 45000  |
+id
 
-**Query:**
-```sql
-SELECT *
-FROM Employees
-WHERE salary > 45000;
-```
-**Result:**
+name
 
-| id | name | department | salary |
-|-----|-------|------------|--------|
-| 1   | Ravi  | IT         | 50000  |
-| 3   | Arun  | IT         | 60000  |
+department
 
-Use **WHERE** when you want to filter individual records.
+salary
 
----
+1
 
-## 2. What is GROUP BY?
+Ravi
 
-GROUP BY combines rows having the same value into groups.
+IT
 
-**Query:**
-```sql
-SELECT department, COUNT(*)
-FROM Employees
-GROUP BY department;
-```
-**Result:**
+50000
 
-| department | count |
-|------------|--------|
-| IT         | 2      |
-| HR         | 2      |
+2
 
-Here, SQL creates one group for **IT** and one for **HR**.
+Priya
 
----
+HR
 
-## 3. Aggregate Functions Used with GROUP BY
-- **COUNT()**:
-a) Counts rows.
-after `GROUP BY`:
-e.g., `SELECT department, COUNT(*) FROM Employees GROUP BY department;`
-b) Counts number of entries in each group.
-displays total rows per group.
-does not require additional explanation.
-does not need code block here as it's already shown above.
-e.g., `COUNT()` counts the number of employees per department.
-preserves the context of previous example.
-the same applies to other aggregate functions below.
-to be concise, list functions with examples:
-definitions and sample queries:
-they are used to perform calculations on grouped data.
-summarize as follows:
-details below:
-the following are common aggregate functions used with GROUP BY:
-bullet points for clarity:
-bolded function names for emphasis:
-bolded explanations for clarity.
+40000
+
+3
+
+Arun
+
+IT
+
+60000
+
+4
+
+Neha
+
+HR
+
+45000
+
+### Query
+
+    SELECT *FROM EmployeesWHERE salary > 45000;
+
+### Result
+
+id
+
+name
+
+department
+
+salary
+
+1
+
+Ravi
+
+IT
+
+50000
+
+3
+
+Arun
+
+IT
+
+60000
+
+Use `WHERE` when you want to filter individual records.
+
+* * *
+
+2\. What is `GROUP BY`?
+=======================
+
+`GROUP BY` combines rows having the same value into groups.
+
+### Query
+
+    SELECT department, COUNT(*)FROM EmployeesGROUP BY department;
+
+### Result
+
+department
+
+count
+
+IT
+
+2
+
+HR
+
+2
+
+Here SQL creates one group for IT and one group for HR.
+
+* * *
+
+3\. Aggregate Functions Used with `GROUP BY`
+============================================
+
+### COUNT()
+
+    SELECT department, COUNT(*)FROM EmployeesGROUP BY department;
+
+Counts rows.
+
+### SUM()
+
+    SELECT department, SUM(salary)FROM EmployeesGROUP BY department;
+
+### AVG()
+
+    SELECT department, AVG(salary)FROM EmployeesGROUP BY department;
+
+### MAX()
+
+    SELECT department, MAX(salary)FROM EmployeesGROUP BY department;
+
+### MIN()
+
+    SELECT department, MIN(salary)FROM EmployeesGROUP BY department;
+
+* * *
+
+4\. Execution Order
+===================
+
+SQL logically processes a query like this:
+
+    SELECT department, AVG(salary)FROM EmployeesWHERE salary > 40000GROUP BY department;
+
+Order:
+
+1.  `FROM`
+2.  `WHERE`
+3.  `GROUP BY`
+4.  Aggregate functions (`SUM`, `AVG`, etc.)
+5.  `SELECT`
+6.  `ORDER BY`
+
+* * *
+
+5\. Difference Between `WHERE` and `HAVING`
+===========================================
+
+Many beginners confuse these.
+
+WHERE
+-----
+
+Filters rows before grouping.
+
+    SELECT department, COUNT(*)FROM EmployeesWHERE salary > 45000GROUP BY department;
+
+Only employees with salary > 45000 are considered.
+
+* * *
+
+HAVING
+------
+
+Filters groups after grouping.
+
+    SELECT department, COUNT(*)FROM EmployeesGROUP BY departmentHAVING COUNT(*) > 1;
+
+Only groups with more than one employee are shown.
+
+* * *
+
+6\. Rule of `GROUP BY`
+======================
+
+When using `GROUP BY`:
+
+✅ Every selected column must either:
+
+*   Be in the `GROUP BY`
+*   Or be inside an aggregate function
+
+### Correct
+
+    SELECT department, COUNT(*)FROM EmployeesGROUP BY department;
+
+### Wrong
+
+    SELECT department, salaryFROM EmployeesGROUP BY department;
+
+Why wrong?
+
+Because one department can have many salaries. SQL doesn't know which salary to show.
 # 🔥 Author
 
 **Sathiyanarayanan**  
